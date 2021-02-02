@@ -43,8 +43,8 @@ const pokeNode=({id, name, abilities, types})=>{
 }
 
 const borrar= ()=>{
-    const iatoyharta = document.getElementById("pokeApi");
-    iatoyharta.innerHTML="";
+    const borrar2 = document.getElementById("pokeApi");
+    borrar2.innerHTML="";
 }
 
 const notFound=()=>{
@@ -85,9 +85,9 @@ const buscarPokemon = async()=>{
         notFound();
         return;
     }
-    const lpm =pokeEncontrado.map(poke=>poke.name);
-    const lpm2 = lpm.toString();
-    const respuesta = await fetch(`https://pokeapi.co/api/v2/pokemon/${lpm2}`);
+    const busq =pokeEncontrado.map(poke=>poke.name);
+    const busq2 = busq.toString();
+    const respuesta = await fetch(`https://pokeapi.co/api/v2/pokemon/${busq2}`);
     const pokeRespuesta = await respuesta.json();
     console.log(pokeRespuesta);
     borrar();
